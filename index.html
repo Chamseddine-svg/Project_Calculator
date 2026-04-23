@@ -3,45 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Calculator | Pro 2026</title>
+  <title>Scientific Calculator | Pro 2026</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Math & logic first, then main -->
   <script src="math.js"></script>
   <script src="calculator.js"></script>
   <script src="main.js" defer></script>
 </head>
 <body>
   <div class="calculator" data-testid="calculator">
-    <div class="display" data-testid="display">0</div>
+    <div class="display-section">
+      <div class="indicators">
+        <span class="memory-indicator" data-testid="memory-indicator" style="visibility: hidden;">M</span>
+        <span class="angle-mode" data-testid="angle-mode">RAD</span>
+      </div>
+      <div class="display" data-testid="display">0</div>
+    </div>
+
     <div class="buttons">
       <!-- Row 1 -->
-      <button class="btn-clear" data-testid="clear">C</button>
+      <button class="btn-clear" data-testid="clear">AC</button>
+      <button class="btn-clear" data-testid="clear-entry">CE</button>
       <button class="btn-backspace" data-testid="backspace">⌫</button>
       <button class="btn-operator" data-testid="operator-divide">÷</button>
-      <button class="btn-operator" data-testid="operator-multiply">×</button>
+      <button class="btn-operator" data-testid="operator-power">^</button>
 
       <!-- Row 2 -->
+      <button class="btn-func" data-testid="func-sin">sin</button>
+      <button class="btn-func" data-testid="func-cos">cos</button>
+      <button class="btn-func" data-testid="func-tan">tan</button>
+      <button class="btn-const" data-testid="const-pi">π</button>
+      <button class="btn-const" data-testid="const-e">e</button>
+
+      <!-- Row 3 -->
+      <button class="btn-func" data-testid="func-log">log</button>
+      <button class="btn-func" data-testid="func-ln">ln</button>
+      <button class="btn-func" data-testid="func-sqrt">√</button>
+      <button class="btn-func" data-testid="func-square">x²</button>
+      <button class="btn-func" data-testid="func-tenpower">10ˣ</button>
+
+      <!-- Row 4 -->
       <button class="btn-digit" data-testid="digit-7">7</button>
       <button class="btn-digit" data-testid="digit-8">8</button>
       <button class="btn-digit" data-testid="digit-9">9</button>
-      <button class="btn-operator" data-testid="operator-minus">−</button>
+      <button class="btn-operator" data-testid="operator-multiply">×</button>
+      <button class="btn-func" data-testid="func-factorial">!</button>
 
-      <!-- Row 3 -->
+      <!-- Row 5 -->
       <button class="btn-digit" data-testid="digit-4">4</button>
       <button class="btn-digit" data-testid="digit-5">5</button>
       <button class="btn-digit" data-testid="digit-6">6</button>
-      <button class="btn-operator" data-testid="operator-plus">+</button>
+      <button class="btn-operator" data-testid="operator-minus">−</button>
+      <button class="btn-mem" data-testid="mem-mc">MC</button>
 
-      <!-- Row 4 -->
+      <!-- Row 6 -->
       <button class="btn-digit" data-testid="digit-1">1</button>
       <button class="btn-digit" data-testid="digit-2">2</button>
       <button class="btn-digit" data-testid="digit-3">3</button>
-      <button class="btn-equals" data-testid="equals">=</button>
+      <button class="btn-operator" data-testid="operator-plus">+</button>
+      <button class="btn-mem" data-testid="mem-mr">MR</button>
 
-      <!-- Row 5 -->
+      <!-- Row 7 -->
       <button class="btn-digit zero" data-testid="digit-0">0</button>
       <button class="btn-decimal" data-testid="decimal">.</button>
+      <button class="btn-equals" data-testid="equals">=</button>
+      <button class="btn-mem" data-testid="mem-m+">M+</button>
+      <button class="btn-mem" data-testid="mem-m-">M-</button>
     </div>
+
+    <!-- Additional controls -->
+    <div class="extra-controls">
+      <button class="btn-toggle-angle" data-testid="toggle-angle">DEG/RAD</button>
+      <button class="btn-history" data-testid="history-toggle">Hist</button>
+    </div>
+
+    <!-- History panel (hidden by default) -->
+    <div id="history-panel" class="history-panel"></div>
   </div>
 </body>
 </html>
